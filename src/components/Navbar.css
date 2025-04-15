@@ -1,51 +1,53 @@
-/* Navbar.css */
+
+
 
 .navbar {
-  position: sticky;
-  top: 20px;
-  background-color: #050404;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90%;
+  background-color: #f8f6f6;
+  color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 40px;
-  padding: 15px 50px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 100;
+  padding: 15px 30px;
+  margin-top: 25px;
+  margin-left: 80px;
+  border-radius: 50px;
+  box-shadow: 0px 15px 15px rgba(5, 5, 5, 0.3);
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .navbar-logo h2 {
-  margin-right: 750px;
-  margin-bottom: 3px;
-  color: #e2d5d5;
-  margin-left: 5px;
-  
-  
+  color: #1c0264;
+  font-size: 28px;
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* better than individual margin */
 }
 
 .navbar-links a {
-  margin-left: 10px;
   text-decoration: none;
-  color: #eaeaeb;
+  color: #070708;
   font-weight: 700;
   position: relative;
-  padding-bottom: 5px;
-  transition: color 0.3s ease;
-  background-color: transparent;
-  padding: 12px;
-  border: solid 1px rgb(227, 226, 235);
+  padding: 10px 18px;
   border-radius: 40px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
-
-
-
-
-
 
 .navbar-links a.active {
-  color: #000000;
-  background-color: #d4d3da;
-  transition: 1s;
-  font-size: 17px;
-
+  color: #faf2f2;
+  background-color: #170155;
+  transition: 0.7s;
 }
+
+
   

@@ -1,6 +1,72 @@
-.home-container {
-    padding: 20px 30px;
-    min-height: 100vh;
-    
-  }
+/* .home-heading {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 40%;
+  background-color:bisque ;
+  padding: 200px;
+  max-width: 1000px;
+  text-align: center;
+} */
+.home-containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 0px 340px;
+  width: 100%;
+  margin: 0 auto;
   
+}
+
+.home-heading {
+  display: block; /* or flex if you want to center align it later */
+  overflow: hidden;
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 40px;
+  width: 100%;
+  max-width: 1000px; /* fixed max width so content inside doesn't expand beyond this */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+
+
+.text {
+  display: inline-block;
+  white-space: nowrap;
+  letter-spacing: 7px;
+  overflow: hidden;
+  font-size: 35px;
+  border-right: 2px solid #fff;
+  width: 0;
+  animation: typing 3s ease forwards, blink-caret 1.9s step-end infinite;
+}
+
+.gr{
+  color: rgb(33, 9, 143);
+  letter-spacing: 5px;
+  margin-bottom: 40%;
+}
+
+/* Smooth typing effect */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff7f7;
+  }
+}
+

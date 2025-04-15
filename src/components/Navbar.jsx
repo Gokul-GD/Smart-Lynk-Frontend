@@ -5,8 +5,10 @@ import PageTransition from './PageTransition';
 
 function Navbar() {
   return (
-    <PageTransition>
+    <>
+    {/* <PageTransition> */}
     <nav className="navbar">
+      
       <div className="navbar-logo">
         <h2>Smart Lynk</h2>
       </div>
@@ -22,7 +24,8 @@ function Navbar() {
         </NavLink>
       </div>
     </nav>
-    </PageTransition>
+    {/* </PageTransition> */}
+    </>
   );
 }
 
