@@ -1,12 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import PageTransition from './PageTransition';
+
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
+  const HandleAbout = () => {
+        navigate('/about');
+  }
+
+
+
   return (
     <>
-    {/* <PageTransition> */}
+    
     <nav className="navbar">
       
       <div className="navbar-logo">
@@ -16,15 +25,17 @@ function Navbar() {
         <NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : '')}>
           Home
         </NavLink>
-        <NavLink to="/control" className={({ isActive }) => (isActive ? 'active' : '')}>
-          Control
+        <NavLink to="/project" className={({ isActive }) => (isActive ? 'active' : '')}>
+          Project 
+        </NavLink>
+        <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : '')}>
+          About us
         </NavLink>
         <NavLink to="/logout" className={({ isActive }) => (isActive ? 'active' : '')}>
           Logout
         </NavLink>
       </div>
     </nav>
-    {/* </PageTransition> */}
     </>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import PageTransition from '../../components/PageTransition';
-import Navbar from '../../components/Navbar';
 import './HomePage.css'
 import { useState, useEffect } from 'react';
+import Illimg from '../../assets/reg.jpg'
 
 
 function HomePage() {
@@ -31,9 +31,28 @@ function HomePage() {
           Hey Gokul 🎉, <span className='gr' key={currentIndex} >{words[currentIndex]}</span>
         </h1>
       </div>
+ <PageTransition>       
+      <div className="intro-section">
+          <div className="intro-image">
+            <img src={Illimg} alt="Illustration" />
+          </div>
+          <div className="intro-text">
+            <h2>Why This Website?</h2>
+            <p>This platform is built to help users explore projects, discover ideas, and build something amazing with ease. Whether you're a developer, designer, or beginner — this space is for you.</p>
+          </div>
+        </div>
+        </PageTransition>
+
+
+
       <div className="projects-section">
-          <h2>My Projects</h2>
-          {/* your projects or components here */}
+        
+
+                   
+      <h2>My Projects</h2>
+          
+         
+
         </div>
     </div>
     </>

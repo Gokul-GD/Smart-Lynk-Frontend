@@ -8,6 +8,9 @@ import LoginPage from './pages/Login/LoginPage';
 import ForgotPassPage from './pages/Forgot/ForgotPage';
 import Navbar from './components/Navbar';
 import HomePage from './pages/Home/HomePage';
+import  AboutPage  from './pages/About/AboutPage';
+import ProjectPage from './pages/Project/Project';
+import LogoutPage from './pages/Logout/Logout';
 
 function AppContent() {
   const location = useLocation();
@@ -28,6 +31,12 @@ function AppContent() {
         <Route path='/reset-password' element={<ForgotPassPage />} />
 
         <Route path='/home' element={<HomePage />}/>
+
+        <Route path='/about' element={<AboutPage />} />
+
+        <Route path='/logout' element={<LogoutPage />} />
+
+        <Route path='/project' element={<ProjectPage />} />
 
         </Routes>
       </AnimatePresence>

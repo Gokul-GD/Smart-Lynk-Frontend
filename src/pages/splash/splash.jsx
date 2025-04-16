@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import './splash.css';
 import PageTransition from '../../components/PageTransition';
 import VideoBackgroundLayout from '../../components/VideoBackgroundLayout';
-import TextTypingEffect from '../../components/TextEffect';
 
 const SplashPage = () => {
     const navigate = useNavigate();
