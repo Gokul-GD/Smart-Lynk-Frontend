@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 function Navbar() {
@@ -16,7 +18,7 @@ function Navbar() {
   return (
     <>
     
-    <nav className="navbar">
+    <nav className="navbar" data-aos="fade-left">
       
       <div className="navbar-logo">
         <h2>Smart Lynk</h2>
