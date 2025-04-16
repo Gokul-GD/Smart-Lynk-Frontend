@@ -14,9 +14,9 @@
   overflow: hidden;
   margin-bottom: 0px;
   text-align: center;
-  padding: 40px;
+  padding: 50px 0px;
   width: 100%;
-  max-width: 1000px; 
+  max-width: 3000px; 
   text-align: center;
   box-sizing: border-box;
 }
@@ -26,8 +26,10 @@
 
 .text {
   display: inline-block;
+  color: rgb(14, 16, 129);
   white-space: nowrap;
-  letter-spacing: 7px;
+  letter-spacing: 6px;
+  font-weight: 800;
   overflow: hidden;
   font-size: 35px;
   border-right: 2px solid #fff;
@@ -36,9 +38,10 @@
 }
 
 .gr{
-  color: rgb(33, 9, 143);
+  color: rgb(15, 8, 48);
   letter-spacing: 5px;
   margin-bottom: 40%;
+  font-weight: 700;
 }
 
 .intro-section {

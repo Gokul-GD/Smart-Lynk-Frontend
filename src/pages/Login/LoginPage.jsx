@@ -3,12 +3,32 @@ import './LoginPage.css'
 import { useNavigate, Link } from 'react-router-dom';
 import PageTransition from "../../components/PageTransition";
 import logImg from '../../assets/log.jpg';
+import API from "../../utils/regCall";
+import { useState } from "react";
 
 import backIcon from "../../assets/b2.png"
 
 const LoginPage = () => {
-
+    const [form, setForm] = useState({ email: '', password: '' });
     const navigate = useNavigate();
+
+    const handleChange = (e) => {
+      setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const res = await API.post('/api/auth/login', form);
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('user',JSON.stringify(res.data.user));
+        navigate('/home');
+      }catch (err) {
+          alert(err.response.data.message || 'Login failed ❌');
+      }
+  };
+
+
 
     const handleGoBack = () => {
         navigate('/register');
@@ -40,15 +60,15 @@ return (
         {/* Login Form */}
         <div className="form-container">
           <h2>Login</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Email</label>
-              <input type="email" placeholder="Enter your email" />
+              <input name="email"  onChange={handleChange} type="email" placeholder="Enter your email" />
             </div>
 
             <div className="form-group">
               <label>Password</label>
-              <input type="password" placeholder="Enter your password" />
+              <input name="password" onChange={handleChange} type="password" placeholder="Enter your password" />
             </div>
 
             <button type="submit" className="submit-btn">Login</button>

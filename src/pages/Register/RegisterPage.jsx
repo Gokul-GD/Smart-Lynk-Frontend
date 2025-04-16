@@ -5,12 +5,31 @@ import './RegisterPage.css';
 import { Link } from 'react-router-dom';
 import formimg from '../../assets/reg.jpg'
 import PageTransition from '../../components/PageTransition';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import VideoBackgroundLayout from '../../components/VideoBackgroundLayout';
 import BackIcon from '../../assets/b2.png';
+import API from '../../utils/regCall';
 
 const RegisterPage = () => {
+
+  const [form, setForm] = useState({ name: '', email: '', password: '' });
     const navigate = useNavigate();
+    
+    const handleChange = (e) => {
+      setForm({ ...form, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+        const res = await API.post('/api/auth/register', form);
+        alert('Registered successfully ✅');
+        navigate('/login');
+      } catch (err) {
+        alert(err.response.data.msg || 'Registration failed ❌');
+      }
+    };
+
 
     const handleGoback = () => {
          navigate('/');
@@ -33,18 +52,18 @@ const RegisterPage = () => {
         </div>
         <div className="form-container">
           <h2>Register</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="name">Name </label>
-              <input type="text" placeholder='Enter your name' id="name" name="name" required />
+              <input onChange={handleChange} type="text" placeholder='Enter your name' id="name" name="name" required />
             </div>
             <div className="form-group">
               <label htmlFor="email">Email </label>
-              <input type="email" placeholder='Enter your email' id="email" name="email" required />
+              <input onChange={handleChange} type="email" placeholder='Enter your email' id="email" name="email" required />
             </div>
             <div className="form-group">
               <label htmlFor="password">Password </label>
-              <input type="password" placeholder='Enter your password' id="password" name="password" required />
+              <input onChange={handleChange} type="password" placeholder='Enter your password' id="password" name="password" required />
             </div>
             <button type="submit" className="submit-btn">Sign up</button>
             <p> Already have an account? <Link to="/login" >Login here</Link></p>
@@ -62,5 +81,7 @@ const RegisterPage = () => {
 
 
 };
+
+
 
 export default RegisterPage;

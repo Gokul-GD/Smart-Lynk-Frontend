@@ -15,7 +15,7 @@ import 'aos/dist/aos.css';
 
 function HomePage() {
 
-
+    const user = JSON.parse(localStorage.getItem('user'));
     const words = ["Welcome ! to our Webpage ", "Ready ?", "Let's Go !", "Build Something !"];
     const [currentIndex, setCurrentIndex] = useState(0);
      
@@ -54,7 +54,7 @@ function HomePage() {
     <div className="home-containers">
     <div className="home-heading">
         <h1 className="text">
-          Hey Gokul 🎉, <span className='gr' key={currentIndex} >{words[currentIndex]}</span>
+          Hey {user?.name} 🎉 <span className='gr' key={currentIndex} >{words[currentIndex]}</span>
         </h1>
       </div>
  <PageTransition>       
