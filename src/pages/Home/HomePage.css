@@ -3,9 +3,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 0px 20px;
+  
   width: 100%;
   margin: 0 auto;
+  padding: 0px 0px 20px; /* added top padding */
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 910px;
+  min-height: 150vh;
   
 }
 
@@ -14,6 +19,7 @@
   overflow: hidden;
   margin-bottom: 0px;
   text-align: center;
+  margin-top: 40px;
   padding: 50px 0px;
   width: 100%;
   max-width: 3000px; 
@@ -30,6 +36,7 @@
   white-space: nowrap;
   letter-spacing: 6px;
   font-weight: 800;
+  margin: 0px;
   overflow: hidden;
   font-size: 35px;
   border-right: 2px solid #fff;
@@ -51,6 +58,7 @@
   max-width: 2000px;
   width: 100%;
   padding: 40px 70px;
+  margin-bottom: 50px;
   gap: 100px;
   box-sizing: border-box;
   border-radius: 40px;
@@ -82,16 +90,204 @@
   line-height: 1.7;
 }
 
+
 /* projects-section styling */
-.projects-section {
-  padding: 40px 20px;
+.weather-section {
   width: 100%;
-  max-width: 1000px;
-  text-align: center;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px; /* space between title and board */
 }
 
+
+.weather-board {
+
+  text-align: center;
+  box-sizing: border-box; 
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 2000px;
+  width: 100%;
+  padding: 40px 70px;
+  gap: 10px;
+  box-sizing: border-box;
+  border-radius: 40px;
+  /* background-color: #eee6e6; */
+  border: 2px solid rgb(212, 210, 210);
+}
+
+/* Control section */
+
+/* wrapper for both devices */
+.devices-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  width: 100%;
+  
+}
+
+/* light control box */
+.control-light {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px 100px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 2px solid rgb(212, 210, 210);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.control-light:hover {
+  transform: translateY(-5px);
+}
+
+/* inside the light */
+.light-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  max-width: 2200px;
+  
+}
+
+.light-image {
+  margin-bottom: 20px;
+}
+
+.light-image img {
+  width: 150px; /* Control image size */
+  height: 150px;
+  transition: all 0.3s ease;
+}
+
+
+ 
+.light-status {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.light-description {
+  font-size: 1rem;
+  color: #666;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.5;
+  white-space: normal;
+  word-wrap: break-word;
+  padding: 0 10px;
+  
+  width: 100%; /* Ensure full width of the parent container */
+  max-width: none; /* Remove any max-width restrictions */
+  box-sizing: border-box; /* Prevent padding from affecting width */
+  word-break: break-word; 
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-bottom: 10px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+/* fan control box */
+.control-fan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 600px;
+  width: 100%;
+  padding: 40px 100px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  border: 2px solid rgb(212, 210, 210);
+  transition: all 0.3s ease-in-out;
+
+}
+
+.control-fan:hover {
+  transform: translateY(-5px);
+}
+
+/* title inside each control box */
+.device-title {
+  font-size: 22px;
+  margin-bottom: 50px;
+  text-align: center;
+  margin-top: 50px;
+  letter-spacing: 1px;
+}
+
+.fan-on {
+  animation: spin 2s linear infinite;
+}
+
+
+
+
 /* Smooth typing effect */
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
 
 @keyframes typing {
   from {

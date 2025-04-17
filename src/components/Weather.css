@@ -1,0 +1,137 @@
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+
+}
+
+/* Search bar */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.cityInput {
+  padding: 10px 15px;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 250px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.cityInput input{
+  
+}
+
+.search-icon img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Time & Date */
+.date-time {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #444;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Weather Body Split */
+.weather-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 2000px;
+  padding: 20px;
+  background: transparent;
+  border-radius: 20px;
+  gap: 30px;
+}
+
+/* Left Section (icon, temp, city) */
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.weather-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 20px;
+}
+
+.left-section h1 {
+  font-size: 36px;
+  margin: 5px 0;
+}
+
+.left-section h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Right Section (humidity & wind) */
+.right-section {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 18px;
+  border-radius: 12px;
+  min-width: 100px;
+}
+
+.data-icon {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 9px;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+
+.value {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0077b6;
+}
+
+/* Error message */
+.error {
+  color: red;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  font-size: 16px;
+}

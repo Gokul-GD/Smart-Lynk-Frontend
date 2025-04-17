@@ -103,7 +103,8 @@ input {
 }
 
 input:focus {
-  outline: 2px solid #030303;
+  outline: 1px solid #030303;
+  
 }
 
 .submit-btn {
