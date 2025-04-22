@@ -13,7 +13,7 @@ import 'aos/dist/aos.css';
 import Weather from '../../components/Weather';
 import BlubOn from '../../assets/on.jpg';
 import BulbOff from '../../assets/off.jpg';
-import FanImg from '../../assets/fan.jpg';
+import FanImg from '../../assets/Fan.jpg';
 import Footer from '../../components/Footer';
 import last1 from '../../assets/last.jpg'
 import last2 from '../../assets/last2.jpg'
