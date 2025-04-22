@@ -3,11 +3,8 @@ import axios from 'axios';
 import Chart from 'react-apexcharts';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import '../Project/Project.css';
-import PageTransition from '../../components/PageTransition';
-import Footer from '../../components/Footer';
 
-const Project = () => {
+const Graph = () => {
   const [lightData, setLightData] = useState([]);
   const [fanData, setFanData] = useState([]);
 
@@ -95,16 +92,12 @@ const Project = () => {
     }
   });
 
- 
-
   return (
-    <>
-    
-    <div className='usage-page' data-aos="fade-left"  style={{ padding: '20px' }}>
-      <h2 className='usage-title'>Device Usage Statistics</h2>
+    <div className='usage-page' data-aos="fade-left" style={{ padding: '20px' }}>
+      <h2 className='usage-title'>📊 Device Usage Bar Graph</h2>
 
       <div className='chart-section' style={{ marginBottom: '50px' }}>
-        
+        <h3>💡 Light Usage</h3>
         <Chart
           options={{
             ...getChartOptions("Light"),
@@ -113,12 +106,12 @@ const Project = () => {
           series={getChartSeries(lightData, "Light")}
           type="bar"
           height="350"
-          width="900"
+          width="700"
         />
       </div>
 
       <div className='chart-section'>
-        
+        <h3>🌀 Fan Usage</h3>
         <Chart
           options={{
             ...getChartOptions("Fan"),
@@ -127,14 +120,11 @@ const Project = () => {
           series={getChartSeries(fanData, "Fan")}
           type="bar"
           height="350"
-          width="900"
+          width="700"
         />
       </div>
     </div>
-    <Footer />
-    
-    </>
   );
 };
 
-export default Project;
+export default Graph;

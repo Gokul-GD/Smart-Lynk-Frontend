@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Logo from'../assets/L22.png';
 
 
 function Navbar() {
@@ -21,11 +22,11 @@ function Navbar() {
     <nav className="navbar" data-aos="fade-left">
       
       <div className="navbar-logo">
-        <h2>Smart Lynk</h2>
+        <h2>Smart Lynk <img className="navimg" src={Logo}></img></h2>
       </div>
       <div className="navbar-links">
         <NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : '')}>
-          Home
+          Home 
         </NavLink>
         <NavLink to="/project" className={({ isActive }) => (isActive ? 'active' : '')}>
           Project 

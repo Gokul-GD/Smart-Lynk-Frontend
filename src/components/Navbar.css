@@ -6,23 +6,37 @@
   top: 0;
   left: 0;
   width: 90%;
-  background-color: #f8f3f3;
+   background-color: #FEFCFF;
   color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  margin-top: 25px;
+  padding: 15px 80px;
+  padding-top: 50px;
+  margin-top: 0px;
   margin-left: 80px;
   border-radius: 50px;
-  box-shadow: 0px 15px 15px rgba(5, 5, 5, 0.3);
+
   z-index: 1000;
   box-sizing: border-box;
 }
 
+.navimg{
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  
+}
+
 .navbar-logo h2 {
+  display: flex;
+  font-family:  "Lilita One", sans-serif;
+  gap: 10px;
   color: #1c0264;
   font-size: 28px;
+  font-weight: 800;
+  align-items: center;
+  
   margin: 0;
   margin-left: 12px;
 }

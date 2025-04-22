@@ -5,3 +5,18 @@
 
   
 }
+
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.main-content {
+  min-height: 100vh; /* Ensures that the main content stretches to fill the page */
+  padding-bottom: 60px; /* Adjust for footer height, to avoid overlap */
+}
+
+footer {
+  margin-top: auto; /* Push footer to the bottom */
+}
+

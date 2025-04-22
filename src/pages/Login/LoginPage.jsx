@@ -57,7 +57,7 @@ return (
           <img src={logImg} alt="Illustration" className="illustration-imgs" />
         </div>
 
-        {/* Login Form */}
+        
         <div className="form-container">
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
@@ -78,7 +78,8 @@ return (
             </p>
           </form>
         </div>
-        <button onClick={handleGohome}>Click me</button>
+        {/* <button onClick={handleGohome}>Click me</button> */}
+        
       </div>
 
         

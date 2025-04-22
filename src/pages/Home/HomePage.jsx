@@ -7,12 +7,19 @@ import Illimg1 from '../../assets/int.jpg'
 import Illimg2 from '../../assets/l1.jpg'
 import Illimg3 from '../../assets/wapp.jpg'
 import Illimg4 from '../../assets/sh.jpg'
+import axios from 'axios';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Weather from '../../components/Weather';
 import BlubOn from '../../assets/on.jpg';
 import BulbOff from '../../assets/off.jpg';
 import FanImg from '../../assets/fan.jpg';
+import Footer from '../../components/Footer';
+import last1 from '../../assets/last.jpg'
+import last2 from '../../assets/last2.jpg'
+import last3 from '../../assets/last 3.jpg'
+
+
 
 
 
@@ -20,24 +27,46 @@ import FanImg from '../../assets/fan.jpg';
 function HomePage() {
 
     const user = JSON.parse(localStorage.getItem('user'));
-    const words = ["Welcome ! to our Webpage ", "Ready ?", "Let's Go !", "Build Something !"];
+    const words = ["Let's Make Your Home Smarter !", "Let's Go !", "Let Technology Serve!","Lights On , Worries Gone !"];
     const [currentIndex, setCurrentIndex] = useState(0);
      
     const images = [Illimg, Illimg1, Illimg2,Illimg3,Illimg4];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    const imagesl = [last1, last2, last3];
+    const [LastImageIndex, setLastImageIndex] = useState(0);
     
     
       const [isLightOn, setIsLightOn] = useState(false);
       const [isFanOn, setIsFanOn] = useState(false);
 
-       const handleFanToggle = () => {
-       setIsFanOn(!isFanOn);
-      };
+      
 
-      const handleToggle = () => {
-        setIsLightOn(!isLightOn);
+
+      
+      const controlDevice = (device, status) => {
+        fetch("http://localhost:5000/api/devices/control", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ device, status }),
+        })
+          .then((res) => res.text())
+          .then((data) => alert(data))
+          .catch((err) => console.error("Error:", err));
       };
     
+      const handleFanToggle = () => {
+        const newStatus = !isFanOn ? "on" : "off";
+        setIsFanOn(!isFanOn);
+        controlDevice("fan", newStatus); 
+      };
+    
+      const handleToggle = () => {
+        const newStatus = !isLightOn ? "on" : "off";
+        setIsLightOn(!isLightOn);
+        controlDevice("light", newStatus); 
+      };
+
     
 
     useEffect(() => {
@@ -45,9 +74,19 @@ function HomePage() {
         setCurrentImageIndex((prevIndex) =>
           prevIndex === images.length - 1 ? 0 : prevIndex + 1
         );
-      }, 3000); // change image every 3 seconds
+      }, 2000); 
     
       return () => clearInterval(imageInterval);
+    }, []);
+
+    useEffect(() => {
+      const imagelInterval = setInterval(() => {
+        setLastImageIndex((prevIndex) =>
+          prevIndex === imagesl.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 2000); 
+    
+      return () => clearInterval(imagelInterval);
     }, []);
     
   
@@ -68,7 +107,7 @@ function HomePage() {
     useEffect(() => {
       setTimeout(() => {
         AOS.refresh();
-      }, 500); // small delay after mount to refresh AOS positions
+      }, 500); 
     }, []);
 
   return (
@@ -76,7 +115,7 @@ function HomePage() {
     
    <PageTransition>  
 
-    <div className="home-containers">
+    <div className="home-containers" data-aos="fade-left">
     <div className="home-heading">
         <h1 className="text">
           Hey {user?.name} 🎉 <span className='gr' key={currentIndex} >{words[currentIndex]}</span>
@@ -88,14 +127,14 @@ function HomePage() {
             <img src={images[currentImageIndex]} alt="Illustration" />
           </div>
           <div className="intro-text" data-aos="fade-left">
-            <h2>Why This Website?</h2>
-            <p >This platform is built to help users explore projects, discover ideas, and build something amazing with ease. Whether you're a developer, designer, or beginner — this space is for you.</p>
+            <h3>Why This Webpage Matters !</h3>
+            <p >Our personalized smart home control hub — check live weather, room conditions, and manage your devices like lights and fans securely from anywhere, anytime with a simple click !</p>
           </div>
         </div>
         
    
         <div className="weather-section">
-        <h2 className='second-title' data-aos="fade-left">Weather Dashboard</h2>
+        <h2 className='second-title' data-aos="fade-left">Stay Ahead with Weather Data !</h2>
 
       <div className="weather-board" data-aos="fade-left">
                    <Weather />
@@ -104,7 +143,7 @@ function HomePage() {
        </div>
       
       <div className='devices-section'>
-        <h2 className='device-title'>Control Your Devices</h2>
+        <h2 className='device-title'>" One Click to Smart Living "</h2>
         
         <div className='devices-container' >
     <div className='control-light' >
@@ -128,7 +167,7 @@ function HomePage() {
  </div> 
 
 
-    </div>
+  </div>
     <div className='control-fan' >
       
     <div className='light-content'>
@@ -149,17 +188,34 @@ function HomePage() {
     </div>
   </div>
 
-
-
-
-    </div>
+  
 
     </div>
+ 
     </div>
+    
+    
+    </div>
+    
 
-   
     </div>
+    <div className='intro-sections'>
+    <div className="intro-image" >
+            <img src={imagesl[LastImageIndex]} alt="Illustration" />
+          </div>
+          <div className="intro-text" >
+            <h3> Meet the Minds Behind Smart Living </h3>
+            <p> We are passionate final-year Computer Science students driven by innovation. This IoT Smart Device project empowers users to control home appliances through a simple, secure, and user-friendly web interface. </p>
+          </div>
+
+           
+             
+
+    </div>
+    
+    <Footer />
     </PageTransition>
+    
     </>
 
   )

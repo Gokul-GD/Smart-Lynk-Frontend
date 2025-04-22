@@ -69,7 +69,7 @@ function Weather() {
           setIcon(iconMap[iconCode] || SunIcon);
           setError("");
         } catch (err) {
-          console.error("Error fetching weather data:", err);
+          console.error("Error fetching weather data:");
           setError("Error fetching weather data.");
         }
       };

@@ -1,0 +1,22 @@
+button{
+    padding: 10px 40px;
+    border-radius: 40px;
+    border: 2px solid rgb(4, 4, 54);
+    font-family: Poppins,Inter,Avenir,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    transition: 0.8s;
+    margin-bottom: 20px;
+}
+.log{
+    font-family: Poppins,Inter,Avenir,Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+.nameL{
+    color: rgb(4, 4, 77);
+}
+button:hover {
+      background-color: rgb(3, 3, 59);
+      color: aliceblue;  
+}
