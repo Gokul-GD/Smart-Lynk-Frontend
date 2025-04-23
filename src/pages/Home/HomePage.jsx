@@ -45,7 +45,7 @@ function HomePage() {
 
       
       const controlDevice = (device, status) => {
-        fetch("http://localhost:5000/api/devices/control", {
+        fetch("https://smart-lynk-backend.onrender.com/api/devices/control", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ device, status }),

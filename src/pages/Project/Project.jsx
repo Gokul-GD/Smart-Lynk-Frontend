@@ -12,7 +12,7 @@ const Project = () => {
   const [fanData, setFanData] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/devices/usage")
+    axios.get("https://smart-lynk-backend.onrender.com/api/devices/usage")
       .then(response => {
         const light = response.data.filter(item => item.device === "light");
         const fan = response.data.filter(item => item.device === "fan");
